@@ -1,0 +1,21 @@
+.App {
+  margin: 80px;
+  text-align: center;
+  padding: 30px;
+}
+
+.add_form {
+  margin-top:40px;
+  padding-right: 25px;
+  min-width: 250px;
+}
+
+.header{
+  text-align: left;
+  padding-bottom: 30px;
+  color: rgb(4, 52, 4);
+}
+
+input{
+  min-width: 230px;
+}
