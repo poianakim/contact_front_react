@@ -21,7 +21,7 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      <h1> Flask API with React Contact App</h1> 
+      <h1 className="title"> Flask API with React Contact App</h1> 
       <Grid centered columns={4}>
         <Grid.Column>
           <Header className="header" dividing> Add New Contact Here </ Header>
@@ -31,18 +31,15 @@ const App = () => {
       <Header className="header" dividing>
         Total Contacts: {contacts.length}</Header>
           {contacts.map((contact) => {
-            return (
-           
+            return (           
               <List key={contact.id}>
                 <Contact contact={contact} />
                 <hr></hr>
               </List>
             )
           })}
-
           </Grid.Column>
       </Grid>
-
     </div>
   );
 };
