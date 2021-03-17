@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Button, Form, Input } from "semantic-ui-react";
+import React, {useState } from "react";
+import { Form } from "semantic-ui-react";
 
 const Update = ({ contact }) => {
-  const [newFirst, setNewFirst] = useState(contact.first);
-  const [newSecond, setNewSecond] = useState(contact.second);
+  const [newFirst, setNewFirst] = useState(contact.firstname);
+  const [newSecond, setNewSecond] = useState(contact.secondname);
   const [newNumber, setNewNumber] = useState(contact.number);
-  useEffect(() => {}, []);
+
   const handleInputChange = (event) => {
     const {
       target: { value, name },
@@ -19,6 +19,7 @@ const Update = ({ contact }) => {
     }
   };
   const handleSubmitUpdate = async (event) => {
+    event.preventDefault();
     const updated_contact = {
       first: newFirst,
       second: newSecond,
@@ -34,6 +35,8 @@ const Update = ({ contact }) => {
     if (reponse.ok) {
       console.log("Contact Updated");
     }
+    window.location.reload();
+
   };
   return (
     <Form>
@@ -65,9 +68,9 @@ const Update = ({ contact }) => {
         />
       </Form.Field>
       <Form.Field>
-        <Button primary type="submit" onClick={handleSubmitUpdate}>
-          Submit
-        </Button>
+        <button type="submit" id="update_submit" onClick={handleSubmitUpdate}>
+          SUBMIT UPDATE
+        </button>
       </Form.Field>
     </Form>
   );

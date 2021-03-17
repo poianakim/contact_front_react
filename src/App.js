@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid, List } from "semantic-ui-react";
+import { Grid, Header, List } from "semantic-ui-react";
 import "./App.css";
 import Add from "./Components/AddForm";
 import Contact from "./Components/Contact";
@@ -21,22 +21,28 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      <Grid>
-        <Grid.Column width={4} className="add_form">
-          <h1 className="header">Add New Contact Here</h1>
+      <h1> Flask API with React Contact App</h1> 
+      <Grid centered columns={4}>
+        <Grid.Column>
+          <Header className="header" dividing> Add New Contact Here </ Header>
           <Add style={{ margintop: 100 }} />
-        </Grid.Column>
-        <Grid.Column width={8} className="contact_list">
-          <h1 className="header">Total Contacts: {contacts.length}</h1>
+          </Grid.Column>
+          <Grid.Column>
+      <Header className="header" dividing>
+        Total Contacts: {contacts.length}</Header>
           {contacts.map((contact) => {
             return (
+           
               <List key={contact.id}>
                 <Contact contact={contact} />
+                <hr></hr>
               </List>
             )
           })}
-        </Grid.Column>
+
+          </Grid.Column>
       </Grid>
+
     </div>
   );
 };

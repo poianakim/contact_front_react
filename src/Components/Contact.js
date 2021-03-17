@@ -1,20 +1,24 @@
 import React, { useState } from "react";
-import { Header, Button, Container } from "semantic-ui-react";
+import {Container, } from "semantic-ui-react";
 import Update from "./Update";
 
 const Contact = ({ contact }) => {
   const [update, setUpdate] = useState(false);
+  
+
   const toggleUpdate = () => {
     update ? setUpdate(false) : setUpdate(true);
   };
-  const handleDelete = async ()=>{
+  const handleDelete = async (event)=>{
+    event.preventDefault();
     let confmsg = window.confirm('Do you want to delete this contact ?')
     if(confmsg) {
       const response = await fetch(`/contacts/${contact.id}`, {
         method:'DELETE'
       })
       if (response.ok) {
-        window.alert('Contact has been deleted')
+        console.log('Contact Deleted Successfully')
+        window.location.reload();
       }
     } else {
       return;
@@ -26,14 +30,24 @@ const Contact = ({ contact }) => {
         <Update contact={contact} />
       ) : (
         <Container>
-          <Header>
-            👥 Name : {contact.firstname}, {contact.secondname}
-          </Header>
-          <Header>📞 Number : {contact.number}</Header>
-          <Button positive onClick={toggleUpdate}>
-            Update
-          </Button>
-          <Button negative onClick={handleDelete}>Delete</Button>
+
+            <h3 className="header">
+            NAME
+            </h3>
+            <h3>
+             {contact.firstname} {contact.secondname}
+            </h3>
+  <h3 className="header">
+  NUMBER  
+  </h3>
+  <h3>
+  {contact.number}
+  </h3>
+          <button style={{marginRight:10, marginBottom:10}} type="submit" name="update"onClick={toggleUpdate}>
+            UPDATE
+          </button>
+          <button  type="submit" name="delete" onClick={handleDelete}>DELETE
+          </button>
         </Container>
       )}
     </div>

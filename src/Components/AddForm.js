@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Button, Form, Input } from "semantic-ui-react";
+import React, {useState } from "react";
+import {Form, Input } from "semantic-ui-react";
 
 const Add = () => {
   const [first, setFirst] = useState("");
   const [second, setSecond] = useState("");
   const [number, setNumber] = useState("");
-
+  
   const handleInputChange = (event) => {
     const {
       target: { value, name },
@@ -32,8 +32,10 @@ const Add = () => {
     });
     if (reponse.ok) {
       console.log("Contact added");
+      window.location.reload();
     }
   };
+  
   return (
     <Form>
       <Form.Field>
@@ -65,10 +67,9 @@ const Add = () => {
         />
       </Form.Field>
       <Form.Field>
-        <Button primary type="submit" onClick={handleSubmit}>
-          {" "}
-          Submit
-        </Button>
+        <button type="submit" id="add_button" onClick={handleSubmit}>
+          SUBMIT
+        </button>
       </Form.Field>
     </Form>
   );
