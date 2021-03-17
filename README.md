@@ -20,6 +20,8 @@ npm start
 You can add a contact and when you submit the pae will be reloaded.
 ![Contact list](img/contact_list.png)
 You can see the total number of contacts and update or delete each contact.
+![Clicked Contact](img/clicked_contact.png)
+When you click a contact from the list you can see the number.
 ![Contact update form](img/update_submit.png)
 When you click update button, that contact can be editable then you can submit the update. 
 It will reload the page.

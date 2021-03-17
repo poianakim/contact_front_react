@@ -21,7 +21,10 @@ const Add = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    if(!first || !number){
+      window.alert("First name and Number are required")
+      return;
+    }
     const new_contact = { first, second, number };
     const reponse = await fetch("/add", {
       method: "POST",
@@ -38,14 +41,16 @@ const Add = () => {
   
   return (
     <Form>
+      <p>section with * requiredㅣㅑㄴㅅ</p>
       <Form.Field>
         <Form.Input
           required
           name="first"
           type="text"
-          placeholder="First Name"
+          placeholder="* First Name"
           value={first}
           onChange={handleInputChange}
+          required
         />
       </Form.Field>
       <Form.Field>
@@ -61,13 +66,14 @@ const Add = () => {
         <Input
           name="number"
           type="tel"
-          placeholder="Phone Number"
+          placeholder="* Phone Number"
           value={number}
           onChange={handleInputChange}
+          required
         />
       </Form.Field>
       <Form.Field>
-        <button type="submit" id="add_button" onClick={handleSubmit}>
+        <button style={{textAlign: "right"}}type="submit" id="add_button" onClick={handleSubmit}>
           SUBMIT
         </button>
       </Form.Field>
