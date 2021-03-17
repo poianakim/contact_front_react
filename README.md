@@ -16,11 +16,11 @@ npm start
 * semantic-ui-css
 
 ## Simple guide for simple app
-[Contact add form](img/contact_add_form.png)
+![Contact add form](img/contact_add_form.png)
 You can add a contact and when you submit the pae will be reloaded.
-[Contact list](img/contact_list.png)
+![Contact list](img/contact_list.png)
 You can see the total number of contacts and update or delete each contact.
-[Contact update form](img/update_submit.png)
+![Contact update form](img/update_submit.png)
 When you click update button, that contact can be editable then you can submit the update. 
 It will reload the page.
 
