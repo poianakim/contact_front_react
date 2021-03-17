@@ -1,10 +1,11 @@
 # Simple React Contact App
 
 ## Available script
- Run server 
-``` bash 
-npm start
-```
+1. Clone repo ```git clone ...```
+2. Install npm ```npm install```
+3. Run server ```npm start```
+
+
 ##
 * Default proxy: [localhost:3000](localhost:3000)
 * API connected to [localhost:5000](localhost:5000) in ```package.json```
