@@ -1,10 +1,12 @@
 # Simple React Contact App
 
+This project works with [python api project ](https://github.com/poianakim/contact_api)
+You should run your server side with this then front end side also will work.
+
 ## Available script
 1. Clone repo ```git clone ...```
 2. Install npm ```npm install```
 3. Run server ```npm start```
-
 
 ##
 * Default proxy: [localhost:3000](localhost:3000)
