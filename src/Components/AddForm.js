@@ -41,7 +41,7 @@ const Add = () => {
   
   return (
     <Form>
-      <p>section with * requiredㅣㅑㄴㅅ</p>
+      <p>section with * required</p>
       <Form.Field>
         <Form.Input
           required

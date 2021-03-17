@@ -21,7 +21,7 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      <h1 className="title"> Flask API with React Contact App</h1> 
+      <h1 className="title"> 👥 React Contact App 📒</h1> 
       <Grid centered columns={4}>
         <Grid.Column>
           <Header className="header" dividing> Add New Contact Here </ Header>
