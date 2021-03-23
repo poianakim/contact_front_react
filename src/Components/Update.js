@@ -39,7 +39,7 @@ const Update = ({ contact }) => {
 
   };
   return (
-    <Form>
+    <Form onSubmit={handleSubmitUpdate}>
       <Form.Field>
         <input
           name="first"
@@ -68,7 +68,7 @@ const Update = ({ contact }) => {
         />
       </Form.Field>
       <Form.Field>
-        <button type="submit" id="update_submit" onClick={handleSubmitUpdate}>
+        <button type="submit" id="update_submit">
           SUBMIT UPDATE
         </button>
       </Form.Field>

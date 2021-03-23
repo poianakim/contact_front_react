@@ -17,7 +17,9 @@ const App = () => {
       response.json().then((data) => {
         setContacts(data);
       })
-    );
+    ).catch((err) => {
+      console.log(err);
+    });
   }, []);
   return (
     <div className="App">

@@ -40,7 +40,7 @@ const Add = () => {
   };
   
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <p>section with * required</p>
       <Form.Field>
         <Form.Input
@@ -50,7 +50,6 @@ const Add = () => {
           placeholder="* First Name"
           value={first}
           onChange={handleInputChange}
-          required
         />
       </Form.Field>
       <Form.Field>
@@ -69,11 +68,10 @@ const Add = () => {
           placeholder="* Phone Number"
           value={number}
           onChange={handleInputChange}
-          required
         />
       </Form.Field>
       <Form.Field>
-        <button style={{textAlign: "right"}}type="submit" id="add_button" onClick={handleSubmit}>
+        <button style={{textAlign: "right"}}type="submit" id="add_button">
           SUBMIT
         </button>
       </Form.Field>
