@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {Container, } from "semantic-ui-react";
 import Update from "./Update";
 
-const Contact = ({ contact }) => {
+const Contact = ({ contact,setContacts }) => {
   const [update, setUpdate] = useState(false);
   const [nameClicked, setNameClicked] = useState(false);
 
@@ -22,7 +22,14 @@ const Contact = ({ contact }) => {
       })
       if (response.ok) {
         console.log('Contact Deleted Successfully')
-        window.location.reload();
+        await fetch(`/contacts`, {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }).then((response) => {
+          response.json().then(data => setContacts(data))
+        }).catch(err => console.log(err))
       }
     } else {
       return;
@@ -31,14 +38,11 @@ const Contact = ({ contact }) => {
   return (
     <div>
       {update ? (
-        <Update contact={contact} />
+        <Update contact={contact} setUpdate={setUpdate} setContacts={setContacts} />
       ) : (
         <Container>
 
 <div onClick={handleNameClick}>
-{/* <h3 className="header">
-            NAME
-            </h3> */}
             <h3>
              {contact.firstname} {contact.secondname}
             </h3>

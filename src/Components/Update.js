@@ -1,7 +1,7 @@
 import React, {useState } from "react";
 import { Form } from "semantic-ui-react";
 
-const Update = ({ contact }) => {
+const Update = ({ contact,setUpdate,setContacts }) => {
   const [newFirst, setNewFirst] = useState(contact.firstname);
   const [newSecond, setNewSecond] = useState(contact.secondname);
   const [newNumber, setNewNumber] = useState(contact.number);
@@ -34,9 +34,17 @@ const Update = ({ contact }) => {
     });
     if (reponse.ok) {
       console.log("Contact Updated");
-    }
-    window.location.reload();
+      await fetch(`/contacts`, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }).then((response) => {
+        response.json().then(data => setContacts(data))
+      }).catch(err => console.log(err))
 
+      setUpdate(false)
+    }
   };
   return (
     <Form onSubmit={handleSubmitUpdate}>

@@ -1,7 +1,7 @@
 import React, {useState } from "react";
 import {Form, Input } from "semantic-ui-react";
 
-const Add = () => {
+const Add = ({setContacts}) => {
   const [first, setFirst] = useState("");
   const [second, setSecond] = useState("");
   const [number, setNumber] = useState("");
@@ -35,8 +35,18 @@ const Add = () => {
     });
     if (reponse.ok) {
       console.log("Contact added");
-      window.location.reload();
-    }
+      await fetch("/contacts", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }).then((response) => {
+        response.json().then(data => setContacts(data))
+      }).catch(err => console.log(err))
+      }
+      setFirst("")
+      setSecond("")
+      setNumber("")
   };
   
   return (

@@ -27,7 +27,7 @@ const App = () => {
       <Grid centered columns={4}>
         <Grid.Column>
           <Header className="header" dividing> Add New Contact Here </ Header>
-          <Add style={{ margintop: 100 }} />
+          <Add style={{ margintop: 100 }} setContacts={setContacts} />
           </Grid.Column>
           <Grid.Column>
       <Header className="header" dividing>
@@ -35,7 +35,7 @@ const App = () => {
           {contacts.map((contact) => {
             return (           
               <List key={contact.id}>
-                <Contact contact={contact} />
+                <Contact contact={contact} setContacts={setContacts}/>
                 <hr></hr>
               </List>
             )
