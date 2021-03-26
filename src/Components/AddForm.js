@@ -26,7 +26,7 @@ const Add = ({setContacts}) => {
       return;
     }
     const new_contact = { first, second, number };
-    const reponse = await fetch("/add", {
+    const reponse = await fetch("/api/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const Add = ({setContacts}) => {
     });
     if (reponse.ok) {
       console.log("Contact added");
-      await fetch("/contacts", {
+      await fetch("/api/contacts", {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",

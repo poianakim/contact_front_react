@@ -8,7 +8,7 @@ const App = () => {
   const [contacts, setContacts] = useState([]);
   // inside of useEFfect promise cause error. used fetch instead.
   useEffect(() => {
-    fetch("/contacts", {
+    fetch("/api/contacts", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
