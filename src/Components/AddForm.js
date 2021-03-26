@@ -26,7 +26,7 @@ const Add = ({setContacts}) => {
       return;
     }
     const new_contact = { first, second, number };
-    const reponse = await fetch("/api/add", {
+    const reponse = await fetch("https://contact-flask-react-app.herokuapp.com/api/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
