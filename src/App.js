@@ -8,7 +8,7 @@ const App = () => {
   const [contacts, setContacts] = useState([]);
   // inside of useEFfect promise cause error. used fetch instead.
   useEffect(() => {
-    fetch("/api/contacts", {
+    fetch("https://contact-flask-react-app.herokuapp.com/api/contacts", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

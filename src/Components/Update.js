@@ -25,7 +25,7 @@ const Update = ({ contact,setUpdate,setContacts }) => {
       second: newSecond,
       number: newNumber,
     };
-    const reponse = await fetch(`/api/contacts/${contact.id}`, {
+    const reponse = await fetch(`https://contact-flask-react-app.herokuapp.com/api/contacts/${contact.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const Update = ({ contact,setUpdate,setContacts }) => {
     });
     if (reponse.ok) {
       console.log("Contact Updated");
-      await fetch(`/api/contacts`, {
+      await fetch(`https://contact-flask-react-app.herokuapp.com/api/contacts`, {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",

@@ -17,12 +17,12 @@ const Contact = ({ contact,setContacts }) => {
     event.preventDefault();
     let confmsg = window.confirm('Do you want to delete this contact ?')
     if(confmsg) {
-      const response = await fetch(`/api/contacts/${contact.id}`, {
+      const response = await fetch(`https://contact-flask-react-app.herokuapp.com/api/contacts/${contact.id}`, {
         method:'DELETE'
       })
       if (response.ok) {
         console.log('Contact Deleted Successfully')
-        await fetch(`/api/contacts`, {
+        await fetch(`https://contact-flask-react-app.herokuapp.com/api/contacts`, {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",

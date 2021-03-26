@@ -35,7 +35,7 @@ const Add = ({setContacts}) => {
     });
     if (reponse.ok) {
       console.log("Contact added");
-      await fetch("/api/contacts", {
+      await fetch("https://contact-flask-react-app.herokuapp.com/api/contacts", {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
